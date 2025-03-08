@@ -1,2 +1,4 @@
 @echo off
-powershell -Command "Start-Process 'Block.exe' -Verb RunAs"
+set "batchDir=%~dp0"
+set "exePath=%batchDir%Block.exe"
+powershell -Command "Start-Process '%exePath%' -Verb RunAs"
