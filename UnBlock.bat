@@ -1,2 +1,4 @@
 @echo off
-powershell -Command "Start-Process 'UnBlock.exe' -Verb RunAs"
+set "batchDir=%~dp0"
+set "exePath=%batchDir%UnBlock.exe"
+powershell -Command "Start-Process '%exePath%' -Verb RunAs"
