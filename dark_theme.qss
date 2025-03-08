@@ -1,0 +1,404 @@
+/* Main Window */
+QMainWindow {
+    background-color: #1a1a1a;
+    color: #ffffff;
+    background: transparent;
+}
+
+/* Content Area */
+#main-content {
+    background-color: #1a1a1a;
+    border-left: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+#content-area {
+    background-color: #1E1E1E;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Sidebar */
+#sidebar {
+    background-color: #1a1a1a;
+    min-width: 250px;
+    max-width: 250px;
+    padding: 0;
+}
+
+#profile-frame {
+    background-color: #212121;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 0;
+    margin: 0;
+}
+
+#profile-image-container {
+    margin: 0;
+    padding: 0;
+}
+
+#profile-image {
+    border-radius: 50%;
+    background-color: #2d2d2d;
+    transition: all 0.3s ease;
+}
+
+#profile-image:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(0, 120, 212, 0.3);
+}
+
+#username-label {
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    margin-top: 8px;
+}
+
+#profile-badge {
+    margin-top: -5px;
+    transition: transform 0.2s ease;
+}
+
+#profile-badge:hover {
+    transform: scale(1.1);
+}
+
+#user-status {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+    transition: color 0.2s ease;
+}
+
+#user-status:hover {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+#sidebar-separator {
+    background-color: rgba(255, 255, 255, 0.1);
+    height: 1px;
+    margin: 15px 20px;
+}
+
+#nav-frame {
+    background-color: transparent;
+    margin: 4px 0;
+}
+
+#nav-button {
+    border: none;
+    border-radius: 6px;
+    text-align: left;
+    padding: 8px 12px;
+}
+
+#nav-button:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+#nav-button:checked {
+    background-color: rgba(0, 120, 212, 0.8);
+}
+
+#nav-icon-container {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 6px;
+}
+
+#nav-button:checked #nav-icon-container {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+#nav-button-text {
+    color: white;
+    font-size: 14px;
+}
+
+#nav-button:checked #nav-button-text {
+    color: white;
+    font-weight: 500;
+}
+
+#nav-button:hover:not([active="true"]) #nav-icon-container {
+    background-color: rgba(255, 255, 255, 0.08);
+}
+
+#bottom-frame {
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    padding-top: 15px;
+    margin-top: 5px;
+}
+
+#status-text {
+    color: #ffffff;
+    margin-left: 5px;
+    font-weight: 500;
+}
+
+/* Top Bar */
+QMenuBar {
+    background-color: #212121;
+    color: #ffffff;
+    padding: 6px;
+    font-weight: 500;
+    border: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+QMenuBar::item {
+    background-color: transparent;
+    padding: 8px 12px;
+    border-radius: 6px;
+    margin: 2px;
+    color: rgba(255, 255, 255, 0.85);
+    letter-spacing: 0.3px;
+}
+
+QMenuBar::item:selected {
+    background-color: rgba(255, 255, 255, 0.08);
+    color: white;
+}
+
+QMenuBar::item:pressed {
+    background-color: rgba(255, 255, 255, 0.12);
+}
+
+/* Context Menu Styles */
+QMenu {
+    background-color: #2d2d2d;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    padding: 8px 4px;
+    margin: 2px;
+    /* Add subtle shadow */
+    qproperty-windowDropShadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Menu Items */
+QMenu::item {
+    background-color: transparent;
+    border-radius: 8px;
+    padding: 10px 32px 10px 36px;
+    margin: 2px 6px;
+    min-width: 180px;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 13.5px;
+    font-weight: 500;
+}
+
+QMenu::item:selected {
+    background-color: rgba(0, 120, 212, 0.15);
+    color: #0078d4;
+}
+
+QMenu::item:disabled {
+    color: rgba(255, 255, 255, 0.3);
+}
+
+/* Menu Icons */
+QMenu::icon {
+    position: absolute;
+    left: 12px;
+    opacity: 0.9;
+}
+
+QMenu::separator {
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.08);
+    margin: 8px 12px;
+}
+
+/* Submenu Indicators */
+QMenu::right-arrow {
+    image: url(assets/right_arrow.png);
+    margin-right: 8px;
+}
+
+QMenu::right-arrow:selected {
+    image: url(assets/right_arrow_selected.png);
+}
+
+/* Checkable Menu Items */
+QMenu::indicator {
+    width: 16px;
+    height: 16px;
+    margin-left: 8px;
+}
+
+QMenu::indicator:non-exclusive:checked {
+    image: url(assets/check.png);
+}
+
+/* Menu Animation */
+QMenu {
+    animation: menuSlideIn 0.12s ease-out;
+}
+
+@keyframes menuSlideIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-8px) scale(0.98);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* Status Bar Styles */
+#main-status-bar {
+    background: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+                              stop:0 #0078d4, stop:1 #006abc);
+    min-height: 32px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Status Widget Container */
+#status-widget {
+    background: transparent;
+    padding: 0 12px;
+}
+
+#status-widget QWidget {
+    background: transparent;
+}
+
+/* Status Icon and Text */
+#status-icon {
+    width: 16px;
+    height: 16px;
+    margin-right: 8px;
+}
+
+#status-text {
+    color: white;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+}
+
+/* Status Bar Separators */
+#status-separator {
+    color: rgba(255, 255, 255, 0.25);
+    margin: 0 12px;
+    font-weight: 200;
+    font-size: 18px;
+}
+
+/* Task Counter */
+#task-counter {
+    color: white;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+    padding: 4px 8px;
+    border-radius: 4px;
+    transition: background-color 0.2s ease;
+}
+
+#task-counter:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Time Widget */
+#time-widget {
+    color: white;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+    padding: 4px 12px;
+    margin-right: 16px;
+    border-radius: 4px;
+    transition: background-color 0.2s ease;
+}
+
+#time-widget:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Version Label */
+#version-label {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 0.3px;
+    padding: 0 16px;
+    border-left: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+/* Status Bar Item Spacing */
+QStatusBar::item {
+    border: none;
+    padding: 0;
+}
+
+/* Status Bar Tooltips */
+QStatusBar QToolTip {
+    background-color: #2d2d2d;
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 6px;
+    padding: 8px 12px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+/* Interactive Elements Hover Effects */
+#status-widget > QWidget {
+    transition: background-color 0.2s ease;
+}
+
+#status-widget > QWidget:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+}
+
+/* Status Widget Container Hover */
+#status-widget:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+}
+
+/* Scrollbar */
+QScrollBar:vertical {
+    border: none;
+    background: transparent;
+    width: 8px;
+    margin: 0px;
+}
+
+QScrollBar::handle:vertical {
+    background: rgba(255, 255, 255, 0.2);
+    min-height: 20px;
+    border-radius: 4px;
+}
+
+QScrollBar::handle:vertical:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+QScrollBar::add-line:vertical, QScrollBar::sub-line:vertical {
+    height: 0px;
+}
+
+QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
+    background: none;
+}
+
+/* Window Frame */
+#main-container {
+    background-color: #1E1E1E;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+}
+
+/* Shadow and border effects can be added here */
+#main-container {
+    background-color: #1E1E1E;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+} 
